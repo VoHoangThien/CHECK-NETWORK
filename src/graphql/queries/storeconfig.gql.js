@@ -1,0 +1,361 @@
+import {gql} from '@apollo/client';
+
+export const GET_STORE_CONFIG_DATA = gql`
+  query getStoreConfig {
+    storeConfig {
+      id
+      #for show image
+      base_media_url
+      header_logo_src
+      logo_width
+      logo_height
+      #for authentication: login/signup
+      website_id
+      default_display_currency_code
+      default_country_code
+      country_calling_code
+      phone_typical_format
+      phone_input_mask
+      national_flags_image
+      #store switcher
+      locale
+      code
+      store_name
+      store_group_name
+      #footer
+      copyright
+      #header
+      store_name
+      #category
+      root_category_id
+      catalog_default_sort_by
+      #Wallet config
+      product_url_suffix
+      walletreward_wallet_status
+      walletreward_reward_enable
+      walletreward_reward_earn_reward_creating_order_enable_create_order
+      walletreward_reward_earn_reward_creating_order_min_order_qty
+      walletreward_reward_earn_reward_creating_order_min_order_total
+      walletreward_reward_earn_reward_creating_order_reward_point
+      walletreward_reward_earn_reward_creating_order_reward_message
+      walletreward_reward_earn_reward_creating_order_earn_type
+      walletreward_reward_earn_reward_creating_order_max_reward_per_order
+      walletreward_wallet_order_allow_max_credit_per_order
+      #product
+      out_of_stock_for_saleable_qty_zero
+      #banner for cart and checkout page
+      pwa_image_banner_checkout_left
+      pwa_image_banner_checkout_right
+      pwa_image_banner_cart_left
+      pwa_image_banner_cart_right
+      #Banner link
+      pwa_image_banner_checkout_left_link
+      pwa_image_banner_checkout_right_link
+      pwa_image_banner_cart_left_link
+      pwa_image_banner_cart_right_link
+      #cart page
+      configurable_thumbnail_source
+      #price
+      price_decimal_enable
+      price_decimal_precision
+      header_type
+      #
+      recaptcha_site_key
+      public_key_checkoutcom
+      tabby_min_limit
+      tabby_max_limit
+      tamara_min_limit
+      tamara_max_limit
+      tamara_display_limit_warning
+      #SaaS
+      template_option
+      #colors
+      global_text_color
+      global_title_color
+      global_icon_color
+      global_background_header_color
+      global_text_header_color
+      global_background_footer_color
+      global_text_footer_color
+      global_background_page
+      global_button_background_color
+      global_text_inside_button_color
+      global_hover_text_color
+      global_hover_background_color
+      global_background_image_product_color
+      global_primary_background_color
+      global_secondary_background_color
+      global_tertiary_background_color
+      global_quaternary_background_color
+      global_text_inside_primary_background_color
+      global_text_inside_secondary_background_color
+      global_text_inside_tertiary_background_color
+      global_text_inside_quaternary_background_color
+      header_top_taskbar_text_color
+      header_top_taskbar_background_color
+      product_list_text_color
+      product_list_background_color
+      bottom_taskbar_footer_text_color
+      bottom_taskbar_footer_background_color
+      category_name_color_text_color
+      product_detail_info_tab_background_active
+      product_detail_info_tab_text_inside_active
+      product_detail_info_tab_background_inactive
+      product_detail_info_tab_text_inside_inactive
+      product_list_filter_background_color
+      product_list_filter_text_color
+      product_list_label_filter_background_color
+      product_list_text_label_filter_color
+      product_detail_quantity_text_color
+      product_detail_quantity_background_color
+      mega_menu_background_color
+      social_login_google_enable
+      social_login_google_client_id
+      social_login_facebook_enable
+      social_login_facebook_app_id
+      social_login_apple_enable
+      social_login_apple_app_client_id
+      social_login_apple_app_url_redirect
+      snaptec_payment_app_icon_apple_logo
+      snaptec_payment_app_icon_apple_logo_width
+      snaptec_payment_app_icon_apple_logo_height
+      snaptec_payment_app_icon_visa_logo
+      snaptec_payment_app_icon_visa_logo_width
+      snaptec_payment_app_icon_visa_logo_height
+      snaptec_payment_app_icon_aramex_logo
+      snaptec_payment_app_icon_aramex_logo_width
+      snaptec_payment_app_icon_aramex_logo_height
+      snaptec_payment_app_icon_mastercard_logo
+      snaptec_payment_app_icon_mastercard_logo_width
+      snaptec_payment_app_icon_mastercard_logo_height
+      snaptec_payment_app_icon_mada_logo
+      snaptec_payment_app_icon_mada_logo_width
+      snaptec_payment_app_icon_mada_logo_height
+      snaptec_payment_app_icon_cod_logo
+      snaptec_payment_app_icon_cod_logo_width
+      snaptec_payment_app_icon_cod_logo_height
+      snaptec_payment_icon_tamara_logo
+      snaptec_payment_icon_tamara_logo_width
+      snaptec_payment_icon_tamara_logo_height
+      snaptec_payment_icon_tabby_logo
+      snaptec_payment_icon_tabby_logo_width
+      snaptec_payment_icon_tabby_logo_height
+      snaptec_payment_app_icon_stc_logo
+      snaptec_payment_app_icon_stc_logo_width
+      snaptec_payment_app_icon_stc_logo_height
+      snaptec_payment_icon_card_payment_logo
+      snaptec_payment_icon_card_payment_logo_width
+      snaptec_payment_icon_card_payment_logo_height
+      snaptec_global_icon_myaccount_logo
+      snaptec_global_icon_myaccount_logo_width
+      snaptec_global_icon_myaccount_logo_height
+      snaptec_global_icon_mywishlist_logo
+      snaptec_global_icon_mywishlist_logo_width
+      snaptec_global_icon_mywishlist_logo_height
+      snaptec_global_icon_cart_logo
+      snaptec_global_icon_cart_logo_width
+      snaptec_global_icon_cart_logo_height
+      snaptec_global_icon_activeaddtowishlist_logo
+      snaptec_global_icon_activeaddtowishlist_logo_width
+      snaptec_global_icon_activeaddtowishlist_logo_height
+      snaptec_global_icon_inactiveaddtowishlist_logo
+      snaptec_global_icon_inactiveaddtowishlist_logo_width
+      snaptec_global_icon_inactiveaddtowishlist_logo_height
+      snaptec_global_icon_activetoggle_logo
+      snaptec_global_icon_activetoggle_logo_width
+      snaptec_global_icon_activetoggle_logo_height
+      snaptec_global_icon_inactivetoggle_logo
+      snaptec_global_icon_inactivetoggle_logo_width
+      snaptec_global_icon_inactivetoggle_logo_height
+      snaptec_global_icon_edit_logo
+      snaptec_global_icon_edit_logo_width
+      snaptec_global_icon_edit_logo_height
+      snaptec_global_icon_activetickbox_logo
+      snaptec_global_icon_activetickbox_logo_width
+      snaptec_global_icon_activetickbox_logo_height
+      snaptec_global_icon_inactivetickbox_logo
+      snaptec_global_icon_inactivetickbox_logo_width
+      snaptec_global_icon_inactivetickbox_logo_height
+      snaptec_global_icon_share_logo
+      snaptec_global_icon_share_logo_width
+      snaptec_global_icon_share_logo_height
+      snaptec_myaccount_icon_profile_logo
+      snaptec_myaccount_icon_profile_logo_width
+      snaptec_myaccount_icon_profile_logo_height
+      snaptec_myaccount_icon_paymentmethod_logo
+      snaptec_myaccount_icon_paymentmethod_logo_width
+      snaptec_myaccount_icon_paymentmethod_logo_height
+      snaptec_myaccount_icon_addresslist_logo
+      snaptec_myaccount_icon_addresslist_logo_width
+      snaptec_myaccount_icon_addresslist_logo_height
+      snaptec_myaccount_icon_myorder_logo
+      snaptec_myaccount_icon_myorder_logo_width
+      snaptec_myaccount_icon_myorder_logo_height
+      snaptec_myaccount_icon_loyaltyprogram_logo
+      snaptec_myaccount_icon_loyaltyprogram_logo_width
+      snaptec_myaccount_icon_loyaltyprogram_logo_height
+      snaptec_myaccount_icon_mywishlist_logo
+      snaptec_myaccount_icon_mywishlist_logo_width
+      snaptec_myaccount_icon_mywishlist_logo_height
+      snaptec_myaccount_icon_myrefund_logo
+      snaptec_myaccount_icon_myrefund_logo_width
+      snaptec_myaccount_icon_myrefund_logo_height
+      snaptec_myaccount_icon_deleteaccount_logo
+      snaptec_myaccount_icon_deleteaccount_logo_width
+      snaptec_myaccount_icon_deleteaccount_logo_height
+      snaptec_myaccount_icon_disable_account_logo
+      snaptec_myaccount_icon_disable_account_logo_width
+      snaptec_myaccount_icon_disable_account_logo_height
+      snaptec_global_icon_language_en_logo
+      snaptec_global_icon_language_en_logo_width
+      snaptec_global_icon_language_en_logo_height
+      snaptec_global_icon_language_ar_logo
+      snaptec_global_icon_language_ar_logo_width
+      snaptec_global_icon_language_ar_logo_height
+      snaptec_myaccount_icon_logout_logo
+      snaptec_myaccount_icon_logout_logo_width
+      snaptec_myaccount_icon_logout_logo_height
+      snaptec_global_icon_favicon_logo
+      snaptec_global_icon_favicon_logo_width
+      snaptec_global_icon_favicon_logo_height
+      social_login_google_logo
+      social_login_google_logo_width
+      social_login_google_logo_height
+      social_login_facebook_logo
+      social_login_facebook_logo_width
+      social_login_facebook_logo_height
+      social_login_apple_logo
+      social_login_apple_logo_width
+      social_login_apple_logo_height
+      snaptec_cms_app_stayintouchblock_all
+      snaptec_cms_app_stayintouchblock_pages
+      product_detail_upload_wishlist_icon_inactive
+      product_detail_upload_wishlist_icon_inactive_width
+      product_detail_upload_wishlist_icon_inactive_height
+      product_detail_upload_wishlist_icon_active
+      product_detail_upload_wishlist_icon_active_width
+      product_detail_upload_wishlist_icon_active_height
+      mega_menu_subcate_align
+      customer_login_options
+      allow_guests_to_write_product_reviews
+      tabby_payment_enable_pdp_widget
+      tamara_payment_enable_pdp_widget
+      snaptec_payment_icon_telr_telrpayment_logo
+      snaptec_payment_icon_telr_telrpayment_logo_width
+      snaptec_payment_icon_telr_telrpayment_logo_height
+      snaptec_payment_icon_telr_telrpayment_logo_position
+      snaptec_payment_icon_myfatoorah_payment_logo
+      snaptec_payment_icon_myfatoorah_payment_logo_width
+      snaptec_payment_icon_myfatoorah_payment_logo_height
+      snaptec_payment_icon_myfatoorah_payment_logo_position
+      default_payment_method
+      estimate_shipping_time_is_enable
+      snaptec_payment_icon_apple_logo_position
+      snaptec_payment_icon_visa_logo_position
+      snaptec_payment_icon_aramex_logo_position
+      snaptec_payment_icon_mastercard_logo_position
+      snaptec_payment_icon_mada_logo_position
+      snaptec_payment_icon_cod_logo_pisition
+      snaptec_payment_icon_tamara_logo_position
+      snaptec_payment_icon_tabby_logo_position
+      snaptec_payment_icon_stc_logo_postion
+      snaptec_payment_icon_card_payment_logo_position
+      button_border_radius
+      store_name_label
+      access_token_lifetime_customer
+      limit_for_send_otp
+      #SEO
+      seo_config_meta_description
+      seo_config_meta_keywords
+      seo_config_meta_title
+      config_cache_id_fe
+      snaptec_topbar_enable
+      snaptec_topbar_content
+      payment_hyperpay_mode
+      payment_hyperpay_test_scripturl
+      payment_hyperpay_live_scripturl
+      payment_hyperpay_applepay_merchant_identifier
+    }
+  }
+`;
+export const GET_AVAILABLE_STORES_DATA = gql`
+  query getAvailableStoresData {
+    availableStores {
+      category_url_suffix
+      code
+      default_display_currency_code
+      id
+      locale
+      product_url_suffix
+      secure_base_media_url
+      store_group_code
+      store_group_name
+      store_name
+      store_sort_order
+      website_id
+    }
+  }
+`;
+
+export const GET_AVAILABLE_WEBSITES_DATA = gql`
+  {
+    getAllWebsites {
+      website_id
+      code
+      name
+      sort_order
+      default_group_id
+      is_default
+      store_group {
+        group_id
+        website_id
+        name
+        root_category_id
+        default_store_id
+        code
+        store_view {
+          store_id
+          code
+          website_id
+          group_id
+          name
+          sort_order
+          is_active
+        }
+      }
+    }
+  }
+`;
+
+const GET_APP_TRANSLATIONS = gql`
+  query getAppTranslations($language: String, $websiteId: Int) {
+    getAppTranslations(language: $language, website_id: $websiteId) {
+      key
+      val
+    }
+  }
+`;
+
+const GET_STORE_VIEW = gql`
+  query getStoreviews($store: String!) {
+    getStoreviews(store: $store) {
+      store_id
+      code
+      name
+      website_id
+      website_name
+      country_code
+      country_name
+      locale
+      base_currency_code
+      default_display_currency_code
+      timezone
+      sub_domain
+      sort_order
+    }
+  }
+`;
+
+export default {
+  getStoreConfig: GET_STORE_CONFIG_DATA,
+};
